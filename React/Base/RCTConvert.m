@@ -274,13 +274,13 @@ NSNumber *RCTConvertEnumValue(const char *typeName, NSDictionary *mapping, NSNum
     RCTLogError(@"Expected NSNumber or NSString for %s, received %@: %@", typeName, [json classForCoder], json);
   }
   id value = mapping[json];
-  if (RCT_DEBUG && !value && [json description].length > 0) {
-    RCTLogError(
-        @"Invalid %s '%@'. should be one of: %@",
-        typeName,
-        json,
-        [[mapping allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]);
-  }
+//   if (RCT_DEBUG && !value && [json description].length > 0) {
+//     RCTLogError(
+//         @"Invalid %s '%@'. should be one of: %@",
+//         typeName,
+//         json,
+//         [[mapping allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]);
+//   }
   return value ?: defaultValue;
 }
 
